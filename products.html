@@ -1,1 +1,37 @@
-#
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Products</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<h1>Our Products</h1>
+
+<div class="product">
+  <img src="images/groundnut.jpg">
+  <h2>Groundnut Oil</h2>
+  <p>₹500/L</p>
+  <button onclick="addToCart('Groundnut Oil',500)">Add to Cart</button>
+</div>
+
+<div class="product">
+  <img src="images/coconut.jpg">
+  <h2>Coconut Oil</h2>
+  <p>₹600/L</p>
+  <button onclick="addToCart('Coconut Oil',600)">Add to Cart</button>
+</div>
+
+<div class="product">
+  <img src="images/ghee.jpg">
+  <h2>A2 Cow Ghee</h2>
+  <p>₹1200/kg</p>
+  <button onclick="addToCart('Ghee',1200)">Add to Cart</button>
+</div>
+
+<script src="js/cart.js"></script>
+
+</body>
+</html>
