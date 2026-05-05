@@ -1,1 +1,53 @@
+<!DOCTYPE html>
 
+<html>
+<head>
+  <title>Checkout</title>
+</head>
+
+<body>
+
+<h1>Checkout</h1>
+
+<input type="text" id="name" placeholder="Your Name"><br><br> <input type="text" id="phone" placeholder="Phone Number"><br><br> <input type="text" id="address" placeholder="Delivery Address"><br><br>
+
+<h3>Select Payment Method</h3>
+
+<select id="payment">
+  <option>Cash on Delivery</option>
+  <option>UPI</option>
+</select>
+
+<br><br>
+
+<button onclick="placeOrder()">Place Order</button>
+
+<script>
+function placeOrder() {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  let name = document.getElementById("name").value;
+  let phone = document.getElementById("phone").value;
+  let address = document.getElementById("address").value;
+  let payment = document.getElementById("payment").value;
+
+  let message = "New Order%0A";
+  message += "Name: " + name + "%0A";
+  message += "Phone: " + phone + "%0A";
+  message += "Address: " + address + "%0A";
+  message += "Payment: " + payment + "%0A%0A";
+
+  cart.forEach(item => {
+    message += item.name + " - ₹" + item.price + "%0A";
+  });
+
+  let whatsapp = "https://wa.me/91XXXXXXXXXX?text=" + message;
+
+  window.open(whatsapp, "_blank");
+
+  localStorage.removeItem("cart");
+}
+</script>
+
+</body>
+</html>
