@@ -41,3 +41,8 @@ window.location.href = "checkout.html";
 if (window.location.pathname.includes("cart.html")) {
 displayCart();
 }
+function buyNow(name, price) {
+  let cart = [{name, price}];
+  localStorage.setItem("cart", JSON.stringify(cart));
+  window.location.href = "checkout.html";
+}
